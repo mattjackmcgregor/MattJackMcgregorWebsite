@@ -4,7 +4,7 @@ const router = express.Router()
 const db = require('../db/db')
 
 router.get('/', (req, res) => {
-  db.allSushi()
+  db.allBrands()
     .then(sush => {
       res.json(sush)
     })
@@ -17,9 +17,9 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  db.getSushi(id)
-    .then(sush => {
-      res.json(sush)
+  db.getBrand(id)
+    .then(brand => {
+      res.json(brand)
     })
     .catch(err => {
       // eslint-disable-next-line no-console
@@ -29,8 +29,8 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const sushi = req.body
-  db.newSushi(sushi)
+  const brand = req.body
+  db.newBrand(brand)
     .then(() => {
       res.status(200).end()
     })
@@ -42,8 +42,8 @@ router.post('/', (req, res) => {
 })
 
 router.put('/', (req, res) => {
-  const sushi = req.body
-  db.editSushi(sushi)
+  const brand = req.body
+  db.editBrand(brand)
     .then(() => {
       res.status(200).end()
     })
@@ -56,7 +56,7 @@ router.put('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   const id = req.params.id
-  db.deleteSushi(id)
+  db.deleteBrand(id)
     .then(() => {
       res.status(200).end()
     })

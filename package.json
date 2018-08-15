@@ -1,8 +1,8 @@
 {
-  "name": "fullstack-boiler",
+  "name": "MattJackMcgregorWebsite",
   "version": "1.0.0",
   "description": "",
-  "repository": "https://github.com/anthony-xiao/fullstack-boiler.git",
+  "repository": "https://github.com/mattjackmcgregor/MattJackMcgregorWebsite.git",
   "main": "server/index.js",
   "scripts": {
     "dev": "nodemon server & webpack --watch",
@@ -15,7 +15,7 @@
       "react"
     ]
   },
-  "author": "anthony-xiao <juniorxiao01@gmail.com>",
+  "author": "mattjackmcgregor <mattjackmcgregor@gmail.com>",
   "license": "MIT",
   "dependencies": {
     
