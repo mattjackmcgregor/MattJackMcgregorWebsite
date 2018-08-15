@@ -1,7 +1,7 @@
 {
   "name": "fullstack-boiler",
   "version": "1.0.0",
-  "description": "A site about food",
+  "description": "",
   "repository": "https://github.com/anthony-xiao/fullstack-boiler.git",
   "main": "server/index.js",
   "scripts": {
