@@ -3138,7 +3138,7 @@ module.exports = ReactPropTypesSecret;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.4.1
+/** @license React v16.4.2
  * react-dom.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -5709,14 +5709,15 @@ var ATTRIBUTE_NAME_CHAR = ATTRIBUTE_NAME_START_CHAR + '\\-.0-9\\u00B7\\u0300-\\u
 var ROOT_ATTRIBUTE_NAME = 'data-reactroot';
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + ATTRIBUTE_NAME_START_CHAR + '][' + ATTRIBUTE_NAME_CHAR + ']*$');
 
+var hasOwnProperty = Object.prototype.hasOwnProperty;
 var illegalAttributeNameCache = {};
 var validatedAttributeNameCache = {};
 
 function isAttributeNameSafe(attributeName) {
-  if (validatedAttributeNameCache.hasOwnProperty(attributeName)) {
+  if (hasOwnProperty.call(validatedAttributeNameCache, attributeName)) {
     return true;
   }
-  if (illegalAttributeNameCache.hasOwnProperty(attributeName)) {
+  if (hasOwnProperty.call(illegalAttributeNameCache, attributeName)) {
     return false;
   }
   if (VALID_ATTRIBUTE_NAME_REGEX.test(attributeName)) {
@@ -10042,7 +10043,7 @@ var warnedProperties = {};
 var rARIA = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');
 var rARIACamel = new RegExp('^(aria)[A-Z][' + ATTRIBUTE_NAME_CHAR + ']*$');
 
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
 
 function getStackAddendum() {
   var stack = ReactDebugCurrentFrame.getStackAddendum();
@@ -10050,7 +10051,7 @@ function getStackAddendum() {
 }
 
 function validateProperty(tagName, name) {
-  if (hasOwnProperty.call(warnedProperties, name) && warnedProperties[name]) {
+  if (hasOwnProperty$1.call(warnedProperties, name) && warnedProperties[name]) {
     return true;
   }
 
@@ -20064,7 +20065,7 @@ implementation) {
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.4.1';
+var ReactVersion = '16.4.2';
 
 // TODO: This type is shared between the reconciler and ReactDOM, but will
 // eventually be lifted out to the renderer.
@@ -22737,7 +22738,7 @@ function pathToRegexp (path, keys, options) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.4.1
+/** @license React v16.4.2
  * react.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -22763,7 +22764,7 @@ var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./nod
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.4.1';
+var ReactVersion = '16.4.2';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
